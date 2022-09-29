@@ -25,9 +25,9 @@ export const getJphUsersFailureAction = (apiFailure) => {
   }
 }
 
-export const getJphPostsByUserIdRequestAction = (user) => {
+export const getJphPostsByUserIdRequestAction = (userId) => {
   return {
-    type: GET_JPH_POSTS_BY_USER_ID_REQUEST, payload: user
+    type: GET_JPH_POSTS_BY_USER_ID_REQUEST, payload: userId
   }
 }
 

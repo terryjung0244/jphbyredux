@@ -9,7 +9,8 @@ GET_JPH_POSTS_BY_USER_ID_FAILURE } = JPH_CONST_STRING;
 
 const initialState = {
   users: [],
-  posts: []
+  posts: [],
+  loading: false,
 }
 
 
@@ -31,18 +32,21 @@ export default function jphReducer(state = initialState, action) {
     case GET_JPH_POSTS_BY_USER_ID_REQUEST:
       return {
         ...state,
+        posts: [],
+        loading: true
       }
     
     case GET_JPH_POSTS_BY_USER_ID_SUCCESS:
       return {
         ...state,
-        posts: action.payload
+        posts: action.payload,
+        loading: false
       }
     
     case GET_JPH_POSTS_BY_USER_ID_FAILURE:
       return {
         ...state,
-        
+        loading: false
       }
     default:
       return state;

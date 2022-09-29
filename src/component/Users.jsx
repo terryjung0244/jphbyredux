@@ -18,8 +18,6 @@ const Users = () => {
     navigate(`/posts/${user.id}`);
   }
 
-  console.log(posts);
-
   return (
     <div>
       {users.map((user) => {

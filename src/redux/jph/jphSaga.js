@@ -17,8 +17,9 @@ function* getJphUsersRequestSaga (action) {
 }
 
 function* getJphPostsByUserIdRequestSaga (action) {
-  console.log(action);
+  // console.log(action.payload); // {id: 6}
   let endpoint = `/posts?userId=${action.payload.id}`
+  // console.log(endpoint);
   let response = yield fetch(`${process.env.REACT_APP_JPH_API_ADDRESS}${endpoint}`)
   let data = yield response.json();
   if (data) {
